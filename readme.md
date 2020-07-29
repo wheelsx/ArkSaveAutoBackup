@@ -3,6 +3,8 @@ This tool will automatically backup your ark save files every time the game modi
 
 ## Installation
 
+Current Release: [v1.0](https://github.com/wheelsx/ArkSaveAutoBackup/releases/tag/v1.0)
+
 It's a portable exe. You can put it wherever you want, and just run it when you want to. You can create a shortcut in your startup folder to have it start when you log in to your computer.
 
 ## Usage
