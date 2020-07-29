@@ -25,4 +25,4 @@ Right click on the backup file and click rename. Remove `_bak_` and everything a
 
 ### Other info
 
-Each file is saved in its own directory. When each file is copied from the ark folder, a suffix is appended. The numbers after `_bak_` are _year.month.day.hour.minute.second.thousandths_
+Each file is backed up into a subdirectory of the original file's name. When each file is copied from the ark folder, a suffix is appended. The numbers after `_bak_` are _year.month.day.hour.minute.second.thousandths_
