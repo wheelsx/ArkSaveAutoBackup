@@ -1,5 +1,5 @@
 # Ark Save Auto Backup
-This tool will automatically backup your ark save files. It backs up your .ark, .arktribe, and .arkprofile files to a directory of your chosing. It will keep 20 backups of each file.
+This tool will automatically backup your ark save files every time the game modifies them. It backs up your .ark, .arktribe, and .arkprofile files to a directory of your chosing. It will keep 20 backups of each file.
 
 ## Installation
 
