@@ -1,12 +1,10 @@
 ﻿using System;
-using System.IO;
-using System.Security.Permissions;
-using System.Threading;
-using System.Text.RegularExpressions;
-using System.Linq;
-using System.Runtime.Caching;
-using System.Diagnostics;
 using System.Collections.Concurrent;
+using System.IO;
+using System.Linq;
+using System.Security.Permissions;
+using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace AutomaticFileBackup
 {
@@ -18,8 +16,7 @@ namespace AutomaticFileBackup
         public string[] exclusionRegexArray;
         public ushort maximumBackups;
 
-
-        FileSystemWatcher watcher;
+        private FileSystemWatcher watcher;
 
         private ConcurrentDictionary<string, string> fileSystemDictionary;
         private Thread loop;
@@ -30,12 +27,13 @@ namespace AutomaticFileBackup
         {
             fileSystemDictionary = new ConcurrentDictionary<string, string>();
 
-            watcher = new FileSystemWatcher();
+            watcher = new FileSystemWatcher
+            {
+                Path = sourceDirectory,
 
-            watcher.Path = sourceDirectory;
-
-            watcher.NotifyFilter = NotifyFilters.LastWrite
-                                 | NotifyFilters.FileName;
+                NotifyFilter = NotifyFilters.LastWrite
+                                 | NotifyFilters.FileName
+            };
 
             foreach (string extension in fileExtensions)
             {
@@ -55,7 +53,7 @@ namespace AutomaticFileBackup
 
         private void Loop()
         {
-            while(isActive)
+            while (isActive)
             {
                 Thread.Sleep(250);
                 ProcessDictionary();
@@ -77,7 +75,6 @@ namespace AutomaticFileBackup
         [PermissionSet(SecurityAction.Demand, Name = "FullTrust")]
         private void OnChanged(object source, FileSystemEventArgs e)
         {
-            Debug.WriteLine($"{e.Name} {e.ChangeType}");
             fileSystemDictionary.AddOrUpdate(e.Name, e.FullPath, (k, v) => v);
         }
 

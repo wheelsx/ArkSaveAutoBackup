@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:tb="http://www.hardcodet.net/taskbar" 
+        xmlns:tb="http://www.hardcodet.net/taskbar"
         xmlns:local="clr-namespace:ArkSaveAutoBackup"
         mc:Ignorable="d"
         Title="Ark Save Auto Backup" Height="237" Width="560" ResizeMode="CanMinimize" StateChanged="Window_MainWindow_StateChanged" Loaded="Window_MainWindow_Loaded" Closing="Window_MainWindow_Closing" Closed="Window_MainWindow_Closed">
@@ -17,7 +17,7 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="300" />
             <ColumnDefinition Width="24" />
         </Grid.ColumnDefinitions>
 
@@ -59,7 +59,6 @@
             ...
         </Button>
 
-        
         <CheckBox Grid.Row="2" Grid.Column="1"
                   x:Name="CheckBox_Enabled" IsEnabled="False" VerticalAlignment="Bottom" Checked="CheckBox_Enabled_Checked" Unchecked="CheckBox_Enabled_Unchecked">
             Enabled
@@ -73,7 +72,7 @@
 
         <tb:TaskbarIcon x:Name="TaskbarIcon_Default"
                         IconSource="Resources/ArkSaveIcon.ico"
-                        ToolTipText="Ark Save Auto Backup" >
+                        ToolTipText="Ark Save Auto Backup">
             <tb:TaskbarIcon.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Show GUI" Click="TaskbarIcon_Menu_ShowGUI_Click" />

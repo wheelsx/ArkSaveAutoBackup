@@ -1,24 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using AutomaticFileBackup;
 using Hardcodet.Wpf.TaskbarNotification;
-using AutomaticFileBackup;
-
-#if DEBUG
-using System.Diagnostics;
-#endif
+using System;
+using System.IO;
+using System.Windows;
 
 namespace ArkSaveAutoBackup
 {
@@ -27,12 +11,12 @@ namespace ArkSaveAutoBackup
     /// </summary>
     public partial class MainWindow : Window
     {
-        string arkSaveDirectory;
-        string backupDirectory;
-        bool backupEnabled;
-        FileWatcher fileWatcher;
+        private string arkSaveDirectory;
+        private string backupDirectory;
+        private bool backupEnabled;
+        private FileWatcher fileWatcher;
 
-        bool closingFromTaskbarIcon = false;
+        private bool closingFromTaskbarIcon = false;
 
         public MainWindow()
         {
@@ -83,9 +67,11 @@ namespace ArkSaveAutoBackup
 
         private string GetFolderFromDialog(string description)
         {
-            var folderDialog = new System.Windows.Forms.FolderBrowserDialog();
-            folderDialog.Description = description;
-            folderDialog.ShowNewFolderButton = true;
+            var folderDialog = new System.Windows.Forms.FolderBrowserDialog
+            {
+                Description = description,
+                ShowNewFolderButton = true
+            };
 
             var result = folderDialog.ShowDialog();
 
@@ -96,6 +82,7 @@ namespace ArkSaveAutoBackup
 
             return "";
         }
+
         private void UpdateStatus()
         {
             string status = "";
@@ -214,16 +201,21 @@ namespace ArkSaveAutoBackup
             {
                 case MessageBoxResult.None:
                     break;
+
                 case MessageBoxResult.OK:
                     break;
+
                 case MessageBoxResult.Cancel:
                     break;
+
                 case MessageBoxResult.Yes:
                     closingFromTaskbarIcon = true;
                     this.Close();
                     break;
+
                 case MessageBoxResult.No:
                     break;
+
                 default:
                     break;
             }
@@ -232,18 +224,6 @@ namespace ArkSaveAutoBackup
         private void ShowBaloon(string title, string text, BalloonIcon baloonIcon = BalloonIcon.None)
         {
             TaskbarIcon_Default.ShowBalloonTip(title, text, baloonIcon);
-        }
-
-        private void ShowBaloon(string title, string text, System.Drawing.Icon icon, bool largeIcon = false)
-        {
-            TaskbarIcon_Default.ShowBalloonTip(title, text, icon, largeIcon);
-        }
-
-        private void DebugMessage(string message)
-        {
-#if DEBUG
-            Debug.WriteLine(message);
-#endif
         }
 
         private void Window_MainWindow_Closed(object sender, EventArgs e)
