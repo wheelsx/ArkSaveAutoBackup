@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutomaticFileBackup", "AutomaticFileBackup\AutomaticFileBackup.csproj", "{3AAA2B1A-43F9-4BAA-819F-B4F2095076C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArkSaveAutoBackup", "ArkSaveAutoBackup\ArkSaveAutoBackup.csproj", "{D51A60A3-7113-4DD0-AE38-98F15C4A912C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AAA2B1A-43F9-4BAA-819F-B4F2095076C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AAA2B1A-43F9-4BAA-819F-B4F2095076C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AAA2B1A-43F9-4BAA-819F-B4F2095076C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AAA2B1A-43F9-4BAA-819F-B4F2095076C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51A60A3-7113-4DD0-AE38-98F15C4A912C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51A60A3-7113-4DD0-AE38-98F15C4A912C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51A60A3-7113-4DD0-AE38-98F15C4A912C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51A60A3-7113-4DD0-AE38-98F15C4A912C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0D34D1C-D90B-47E5-9145-4086346391F8}
+	EndGlobalSection
+EndGlobal

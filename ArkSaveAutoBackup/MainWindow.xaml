@@ -1,0 +1,85 @@
+﻿<Window x:Name="Window_MainWindow" x:Class="ArkSaveAutoBackup.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tb="http://www.hardcodet.net/taskbar" 
+        xmlns:local="clr-namespace:ArkSaveAutoBackup"
+        mc:Ignorable="d"
+        Title="Ark Save Auto Backup" Height="237" Width="560" ResizeMode="CanMinimize" StateChanged="Window_MainWindow_StateChanged" Loaded="Window_MainWindow_Loaded" Closing="Window_MainWindow_Closing" Closed="Window_MainWindow_Closed">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28" />
+            <RowDefinition Height="28" />
+            <RowDefinition Height="28" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="24" />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0"
+               HorizontalAlignment="Right">
+            Game Save Source Folder:
+        </Label>
+        <TextBox Grid.Row="0" Grid.Column="1"
+                 x:Name="TextBox_SourceFolder"
+                 Width="300"
+                 HorizontalAlignment="Left"
+                 Text=""
+                 TextWrapping="NoWrap"
+                 VerticalAlignment="Center"
+                 IsReadOnly="True" />
+        <Button Grid.Row="0" Grid.Column="2"
+                x:Name="Button_ChooseSource"
+                Margin="2"
+                Click="Button_ChooseSource_Click">
+            ...
+        </Button>
+
+        <Label Grid.Row="1" Grid.Column="0"
+               HorizontalAlignment="Right">
+            Backup Destination Folder:
+        </Label>
+        <TextBox Grid.Row="1" Grid.Column="1"
+                 x:Name="TextBox_DestinationFolder"
+                 Width="300"
+                 HorizontalAlignment="Left"
+                 Text=""
+                 TextWrapping="NoWrap"
+                 VerticalAlignment="Center"
+                 IsReadOnly="True" />
+        <Button Grid.Row="1" Grid.Column="2"
+                x:Name="Button_ChooseDestination"
+                Margin="2"
+                Click="Button_ChooseDestination_Click">
+            ...
+        </Button>
+
+        
+        <CheckBox Grid.Row="2" Grid.Column="1"
+                  x:Name="CheckBox_Enabled" IsEnabled="False" VerticalAlignment="Bottom" Checked="CheckBox_Enabled_Checked" Unchecked="CheckBox_Enabled_Unchecked">
+            Enabled
+        </CheckBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="0"
+                   x:Name="TextBlock_Status"
+                   Grid.ColumnSpan="3"
+                   TextWrapping="Wrap"
+                   Text="" />
+
+        <tb:TaskbarIcon x:Name="TaskbarIcon_Default"
+                        IconSource="Resources/ArkSaveIcon.ico"
+                        ToolTipText="Ark Save Auto Backup" >
+            <tb:TaskbarIcon.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Show GUI" Click="TaskbarIcon_Menu_ShowGUI_Click" />
+                    <MenuItem Header="Exit" Click="TaskbarIcon_Menu_Exit_Click" />
+                </ContextMenu>
+            </tb:TaskbarIcon.ContextMenu>
+        </tb:TaskbarIcon>
+    </Grid>
+</Window>
