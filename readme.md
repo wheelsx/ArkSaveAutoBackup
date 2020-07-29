@@ -15,7 +15,7 @@ To close the application, right click it's icon in the system tray and select cl
 
 ## Restoring a backup
 
-First navigate to the backups directory you selected, and open the folder corresponding to the file you want to restore. Right click on the file you want to restore, and click copy. The filenames will appear like `TheIsland.ark_bak_2020.07.29.12.12.38.156`
+First navigate to the backups directory you selected, and open the folder corresponding to the file you want to restore. Optionally, you might want to copy all the files to another location until the restoration process is finished, as restoring the backup will backup the backup. Right click on the file you want to restore, and click copy. The filenames will appear like `TheIsland.ark_bak_2020.07.29.12.12.38.156`
 
 Go to your ark save folder in your steamapps. Right click in the folder and click paste.
 
